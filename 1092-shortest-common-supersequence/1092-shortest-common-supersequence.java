@@ -30,10 +30,12 @@ class Solution {
             }
         }
         while(i>0){
-            res.append(str1.charAt(--i));
+            res.append(str1.charAt(i-1));
+            i--;
         }
         while(j>0){
-            res.append(str2.charAt(--j));
+            res.append(str2.charAt(j-1));
+            j--;
         }
         return res.reverse().toString();
     }
