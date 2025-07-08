@@ -12,8 +12,9 @@ class Solution {
                 }
             }
         }
+         int i=n,j=m;
         StringBuilder res=new StringBuilder();
-        int i=n,j=m;
+        // int i=n,j=m;
         while(i>0 && j>0){
             if(str1.charAt(i-1)==str2.charAt(j-1)){
                 res.append(str1.charAt(i-1));
