@@ -6,8 +6,7 @@ class Solution {
         int count=0;
         int maxcount=0;
         while(right<n){
-        if(s.charAt(right)=='a' || s.charAt(right)=='e' || 
-        s.charAt(right)=='i' || s.charAt(right)=='o' || s.charAt(right)=='u'){
+        if(isVowel(s.charAt(right))){
                 count++;
                 }
             if(right-left+1<k){
@@ -15,9 +14,8 @@ class Solution {
             }
             else if(right-left+1==k){
                 maxcount=Math.max(maxcount,count);
-                if(maxcount==k) return k;
-                if(s.charAt(left)=='a' || s.charAt(left)=='e' || s.charAt(left)=='i' || 
-                s.charAt(left)=='o' || s.charAt(left)=='u'){
+                
+                if(isVowel(s.charAt(left))){
                     count--;
                 }
                 left++;
@@ -25,5 +23,8 @@ class Solution {
             }
         }
         return maxcount;
+    }
+    private boolean isVowel(char c){
+        return c=='a' || c=='e' || c=='i' || c=='o' || c=='u';
     }
 }
