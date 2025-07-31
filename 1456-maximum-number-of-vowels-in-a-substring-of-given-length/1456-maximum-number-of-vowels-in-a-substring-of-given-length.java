@@ -15,6 +15,7 @@ class Solution {
             }
             else if(right-left+1==k){
                 maxcount=Math.max(maxcount,count);
+                if(maxcount==k) return k;
                 if(s.charAt(left)=='a' || s.charAt(left)=='e' || s.charAt(left)=='i' || 
                 s.charAt(left)=='o' || s.charAt(left)=='u'){
                     count--;
