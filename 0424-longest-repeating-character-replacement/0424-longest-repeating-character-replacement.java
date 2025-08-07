@@ -1,8 +1,9 @@
 class Solution {
     public int characterReplacement(String s, int k) {
         Map<Character, Integer> map=new HashMap<>();
-        int left=0,right=0,maxF=0,maxlen=0;
-        while(right<s.length()){
+        int left=0,maxF=0,maxlen=0;
+        // while(right<s.length()){
+            for(int right=0;right<s.length();right++){
             char ch=s.charAt(right);
             map.put(ch,map.getOrDefault(ch,0)+1);//increases the freq
             maxF=Math.max(maxF,map.get(ch));
@@ -13,7 +14,7 @@ class Solution {
                 left++;
             }
             maxlen=Math.max(right-left+1,maxlen);
-            right++;
+            // right++;
         }
         return maxlen;
     }
